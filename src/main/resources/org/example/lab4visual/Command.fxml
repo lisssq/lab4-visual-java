@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="450.0" style="-fx-border-color: gray;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab4visual.CommandsController">
+
+    <Button layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteCommand" text="del" />
+    <Button layoutX="54.0" layoutY="18.0" mnemonicParsing="false" onAction="#moveUpCommand" text="up" />
+    <Button layoutX="93.0" layoutY="18.0" mnemonicParsing="false" onAction="#moveDownCommand" text="down" />
+    <Label fx:id="nameCom" layoutX="171.0" layoutY="22.0" text="Label" />
+    <Label fx:id="args" layoutX="238.0" layoutY="22.0" text="Label" />
+</Pane>

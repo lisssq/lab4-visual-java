@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1"
+
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab4visual.AppController">
+
+    <!-- Настройка колонок и строк -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+    </rowConstraints>
+
+
+    <!-- ScrollPane с инструкциями -->
+    <ScrollPane fx:id="scrollPane" prefHeight="300.0" prefWidth="300.0" style="-fx-border-color: gray;" GridPane.rowIndex="1" GridPane.rowSpan="2">
+        <GridPane fx:id="gridPane" prefHeight="50.0" prefWidth="300.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="57.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+    </ScrollPane>
+
+
+
+    <!-- Панель с командами -->
+    <VBox spacing="10" style="-fx-padding: 10; -fx-border-color: gray; -fx-background-color: #f0f0f0;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Button mnemonicParsing="false" onAction="#executeInstruction" text="Выполнить команду" />
+        <Button mnemonicParsing="false" onAction="#resetToDefault" text="Сбросить" />
+        <Button mnemonicParsing="false" onAction="#addInstruction" text="Добавить инструкцию" />
+    </VBox>
+
+    <!-- Панель с регистрами -->
+    <VBox spacing="10" style="-fx-padding: 10; -fx-border-color: gray; -fx-background-color: #f5f5f5;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Значения регистров" />
+        <Label fx:id="R1" text="R1: " />
+        <Label fx:id="R2" text="R2: " />
+        <Label fx:id="R3" text="R3: " />
+        <Label fx:id="R4" text="R4: " />
+    </VBox>
+
+    <!-- Панель с памятью -->
+    <VBox spacing="10" style="-fx-padding: 10; -fx-border-color: gray; -fx-background-color: #f5f5f5;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Состояние памяти" />
+        <ScrollPane fx:id="memoryScrollPane"
+                    minHeight="100.0">
+            <VBox fx:id="memoryBox" />
+        </ScrollPane>
+    </VBox>
+
+    <!-- Панель со статистикой -->
+    <VBox spacing="10" style="-fx-padding: 10; -fx-border-color: gray; -fx-background-color: #f5f5f5;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Частота инструкций" />
+        <ScrollPane fx:id="intructionScrollPane"
+                minHeight="100.0">
+            <VBox fx:id="instructionBox" />
+        </ScrollPane>
+    </VBox>
+
+</GridPane>
